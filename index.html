@@ -56,6 +56,10 @@
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQZDGKV5" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <h1>Product Search</h1>
 
@@ -95,7 +99,6 @@
             const query = document.getElementById('search-input').value;
             const userId = 123;
 
-
             const priceRange = {
                 min: Number(document.getElementById('min-price').value),
                 max: Number(document.getElementById('max-price').value)
@@ -105,18 +108,14 @@
                 max: Number(document.getElementById('max-rating').value)
             };
 
-
             const results = await searchProducts(query, userId, priceRange, ratingRange);
-            console.log(results)
-
+            console.log(results);
 
             const sortField = document.getElementById('sort-field').value;
             const sortDirection = document.getElementById('sort-direction').value;
             const sortedResults = sortProducts(results, sortField, sortDirection);
 
-
             await saveSearchQueryAndWords(query, userId);
-
 
             displayProducts(sortedResults);
         }
@@ -161,7 +160,6 @@
                 : '';
         }
 
-
         window.onload = () => {
             const userId = 123;
             loadSearchHistory(userId);
@@ -169,9 +167,5 @@
     </script>
 
 </body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQZDGKV5" height="0" width="0"
-        style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 </html>
